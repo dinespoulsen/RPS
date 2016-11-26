@@ -1,11 +1,12 @@
 <% if @game.draw?(@player_choice, @opponent_choice) %>
-<h2>The game was a draw</h2>
+<h2>BUUHH! The game was a draw</h2>
 <% else %>
-<h2><%= @winner.name %> wins</h2>
+<h2>YAAA! <%= @winner.name %> wins</h2>
 <% end %>
 
 <p><%= @game.player.name %> selected <%= @player_choice %>: <%= @game.player.wins %> wins</p>
 <p><%= @game.opponent.name %> selected <%= @opponent_choice %> : <%= @game.opponent.wins %> wins </p>
 
-
-<a href="/play">back</a>
+<div class="menu">
+  <a href="/play" class="button">Next Round</a>
+</div>

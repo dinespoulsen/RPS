@@ -1,17 +1,40 @@
-
-
 body {
-  /*background-color: red;*/
+  font-family: Arial;
+}
+
+li {
+  display: inline-block;
 }
 
 .wrapper {
   width: 60%;
   margin: auto;
-  /*background-color: blue;*/
 }
 
+.menu {
+ text-align: center;
+}
 
-form {
-display: inline-block;
-text-align: center;
+.button {
+    background-color: white;
+    border: 2px solid #008CBA;
+    color: black;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+a {
+  text-decoration: none;
+
 }

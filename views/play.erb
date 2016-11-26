@@ -1,9 +1,12 @@
-<h1>Welcome <%= @game.player.name%> to a game of Rock, Paper & Scissors</h1>
+<div class="main">
+  <h2>Welcome <%= @game.player.name%> to a game of Rock, Paper & Scissors</h2>
 
-<h3>Choose your weapon!</h3>
-
-<ul>
-  <li><a href="/selection?choice=Rock">Rock</a></li>
-  <li><a href="/selection?choice=Paper">Paper</a></li>
-  <li><a href="/selection?choice=Scissors">Scissors</a></li>
-</ul>
+  <h3>Choose your weapon!</h3>
+<div>
+<div class="menu">
+  <ul>
+    <a href="/selection?choice=Rock"><li class="button">Rock</li></a>
+    <a href="/selection?choice=Paper"><li class="button">Paper</li></a>
+    <a href="/selection?choice=Scissors"><li class="button">Scissors</li></a>
+  </ul>
+</div>
