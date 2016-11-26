@@ -24,5 +24,11 @@ describe Player do
       player.add_win
       expect(player.won?).to eq true
     end
+
+    it "should return true if player has won" do
+      player.add_win
+      player.add_win
+      expect(player.won_game?).to be true
+    end
   end
 end

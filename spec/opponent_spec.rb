@@ -32,5 +32,11 @@ describe Opponent do
       opponent.add_win
       expect(opponent.won?).to eq true
     end
+
+    it "should know when it has won" do
+      opponent.add_win
+      opponent.add_win
+      expect(opponent.won_game?).to be true
+    end
   end
 end

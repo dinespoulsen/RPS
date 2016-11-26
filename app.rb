@@ -30,8 +30,14 @@ class RockPaperScissor < Sinatra::Base
       @game.win_to(@winner)
     else
     end
-
+    redirect to('/winner') if @game.found_winner?(@game.player, @game.opponent)
     erb(:selection)
+  end
+
+  get '/winner' do
+    @game = Game.instance
+    @winner = @game.winner?(@game.player, @game.opponent)
+    erb(:winner)
   end
 
   # start the server if ruby file executed directly

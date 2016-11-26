@@ -18,6 +18,10 @@ DEFAULT_WINS = 0
     wins == 2
   end
 
+  def won_game?
+    wins == 2
+  end
+
   private
 
   attr_writer :wins

@@ -23,6 +23,15 @@ class Game
     @game = Game.new(name)
   end
 
+  def found_winner?(player, opponent)
+    player.won_game? || opponent.won_game?
+  end
+
+  def winner?(player, opponent)
+    return player if player.wins == 2
+    opponent
+  end
+
   def player_win?(player_choice, opponent_choice)
     rps(player_choice, opponent_choice) == true
   end
