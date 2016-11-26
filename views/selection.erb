@@ -1,9 +1,11 @@
-<h1><%= @game.player.name %> choose <%= @player_choice %> </h1>
-<h1><%= @game.opponent.name %> choose <%= @opponent_choice %> </h1>
-
-<% if @game.rps(@player_choice, @opponent_choice).nil? %>
-<p>The game was a draw</p>
+<% if @game.draw?(@player_choice, @opponent_choice) %>
+<h2>The game was a draw</h2>
 <% else %>
-<p><%= @winner.name %> wins</p>
+<h2><%= @winner.name %> wins</h2>
 <% end %>
+
+<p><%= @game.player.name %> choose <%= @player_choice %>: <%= @game.player.wins %> wins</p>
+<p><%= @game.opponent.name %> choose <%= @opponent_choice %> : <%= @game.opponent.wins %> wins </p>
+
+
 <a href="/play">back</a>

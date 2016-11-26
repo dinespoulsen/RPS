@@ -22,11 +22,15 @@ class RockPaperScissor < Sinatra::Base
     @player_choice = params[:choice]
     @opponent_choice = @game.opponent.play
 
-    if @game.rps(@player_choice, @opponent_choice)
+    if @game.player_win?(@player_choice, @opponent_choice)
       @winner = @game.player
-    else
+      @game.win_to(@winner)
+    elsif @game.opponent_win?(@player_choice, @opponent_choice)
       @winner = @game.opponent
+      @game.win_to(@winner)
+    else
     end
+
     erb(:selection)
   end
 
