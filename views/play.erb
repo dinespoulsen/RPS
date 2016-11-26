@@ -1,7 +1,7 @@
 <h1>Welcome <%= @game.player.name %></h1>
 
-
-<form action="/selection" method="post">
-  <input type="text" name="choice">
-  <input type="submit" value="Play">
-</form>
+<ul>
+  <li><a href="/selection?choice=Rock">Rock</a></li>
+  <li><a href="/selection?choice=Paper">Paper</a></li>
+  <li><a href="/selection?choice=Scissors">Scissors</a></li>
+</ul>

@@ -1,3 +1,4 @@
+#Acts as the computer playing the user
 class Opponent
 DEFAULT_NAME = "MR. Master Gamer"
 DEFAULT_CHOICES = ["Rock", "Paper", "Scissors"]

@@ -9,8 +9,19 @@ RSpec.feature "RockPaperScissor", :type => :feature do
 
   scenario "User can select 'rock'" do
     sign_in_and_play
-    fill_in("choice", :with => "Rock")
-    click_button("Play")
-    expect(page).to have_text("You choose Rock")
+    click_link("Rock")
+    expect(page).to have_text("Dines choose Rock")
+  end
+
+  scenario "User can select 'paper'" do
+    sign_in_and_play
+    click_link("Paper")
+    expect(page).to have_text("Dines choose Paper")
+  end
+
+  scenario "User can select 'scissors'" do
+    sign_in_and_play
+    click_link("Scissors")
+    expect(page).to have_text("Dines choose Scissors")
   end
 end
