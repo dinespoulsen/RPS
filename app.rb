@@ -12,6 +12,7 @@ class RockPaperScissor < Sinatra::Base
   end
 
   post '/selection' do
+    @choice = params[:choice]
     @game
     erb(:selection)
   end

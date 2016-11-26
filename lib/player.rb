@@ -10,4 +10,16 @@ DEFAULT_WINS = 0
     @wins = wins
   end
 
+  def add_win
+    self.wins += 1
+  end
+
+  def won?
+    wins == 2
+  end
+
+  private
+
+  attr_writer :wins
+
 end
