@@ -31,4 +31,20 @@ RSpec.feature "RockPaperScissor", :type => :feature do
     click_link("Next Round")
     expect(page).to have_text("Choose your weapon!")
   end
+
+  scenario "When I submit 'Rock' I am told if I have won" do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+    sign_in_and_play
+    click_link("Rock")
+    expect(page).to have_text "Dines wins"
+  end
+
+  scenario "When I win twice I am the winner of the game" do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+    sign_in_and_play
+    click_link("Rock")
+    click_link("Next Round")
+    click_link("Rock")
+    expect(page).to have_text "Wow you are a profet"
+  end
 end
