@@ -1,32 +1,34 @@
-<% if @game.draw?(@player_choice, @opponent_choice) %>
-<h2>BUUHH! The game was a draw</h2>
-<% else %>
-<h2>YAAA! <%= @winner.name %> wins</h2>
-<% end %>
-
-<div class="left">
-  <p><%= @game.player.name %> selected <%= @player_choice %>: <%= @game.player.wins %> wins</p>
-  <% if @player_choice == "Rock" %>
-    <img src="rock.jpg" height="200">
-  <% elsif @player_choice == "Paper" %>
-    <img src="paper.jpeg" height="200">
-  <% else%>
-    <img src="scissors.jpg" height="200">
+<div class="top">
+  <% if @game.draw?(@player_choice, @opponent_choice) %>
+  <h2>BUUHH! The game was a draw</h2>
+  <% else %>
+  <h2>YAAA! <%= @winner.name %> wins</h2>
   <% end %>
 </div>
 
+<div class="main clearfix">
+  <div class="left">
+    <p><%= @game.player.name %> selected <%= @player_choice %>: <%= @game.player.wins %> wins</p>
+    <% if @player_choice == "Rock" %>
+      <img src="rock.jpg" height="200">
+    <% elsif @player_choice == "Paper" %>
+      <img src="paper.jpeg" height="200">
+    <% else%>
+      <img src="scissors.jpg" height="200">
+    <% end %>
+  </div>
 
-<div class="right">
-  <p><%= @game.opponent.name %> selected <%= @opponent_choice %> : <%= @game.opponent.wins %> wins </p>
-  <% if @opponent_choice == "Rock" %>
-    <img src="rock.jpg" height="200">
-  <% elsif @opponent_choice == "Paper" %>
-    <img src="paper.jpeg" height="200">
-  <% else%>
-    <img src="scissors.jpg" height="200">
-  <% end %>
+  <div class="right">
+    <p><%= @game.opponent.name %> selected <%= @opponent_choice %> : <%= @game.opponent.wins %> wins </p>
+    <% if @opponent_choice == "Rock" %>
+      <img src="rock.jpg" height="200">
+    <% elsif @opponent_choice == "Paper" %>
+      <img src="paper.jpeg" height="200">
+    <% else%>
+      <img src="scissors.jpg" height="200">
+    <% end %>
+  </div>
 </div>
-
 
 
 <div class="menu">
