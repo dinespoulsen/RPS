@@ -12,7 +12,20 @@ li {
 }
 
 .menu {
- text-align: center;
+  clear: both;
+  text-align: center;
+}
+
+.left {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+.right {
+  float: right;
+  width: 50%;
+  text-align: center;
 }
 
 .button {

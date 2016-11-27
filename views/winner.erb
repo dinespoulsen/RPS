@@ -1,5 +1,9 @@
-<h2>Congratulations <%= @winner.name %></h2>
-<h4>You are the Rock, Paper & Scissor maestro!</h4>
+<% if @winner.name == @game.opponent.name %>
+  <h2>That SUCKS Man! <%= @winner.name %> wins!</h2>
+<% else %>
+  <h2>Wow you are a profet! <%= @winner.name %> wins!</h2>
+<% end %>
+
 
 <div class="menu">
   <a href="/" class="button">Play again<a/>

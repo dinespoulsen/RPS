@@ -24,4 +24,11 @@ RSpec.feature "RockPaperScissor", :type => :feature do
     click_link("Scissors")
     expect(page).to have_text("Dines selected Scissors")
   end
+
+  scenario "User can go back after one game played " do
+    sign_in_and_play
+    click_link("Scissors")
+    click_link("Next Round")
+    expect(page).to have_text("Choose your weapon!")
+  end
 end

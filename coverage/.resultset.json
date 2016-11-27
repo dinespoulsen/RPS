@@ -3,9 +3,9 @@
     "coverage": {
       "/Users/dinespoulsen/Projects/RPS/spec/features/web_helpers.rb": [
         1,
-        4,
-        4,
-        4,
+        5,
+        5,
+        5,
         null
       ],
       "/Users/dinespoulsen/Projects/RPS/spec/game_spec.rb": [
@@ -146,6 +146,6 @@
         null
       ]
     },
-    "timestamp": 1480167205
+    "timestamp": 1480185202
   }
 }
