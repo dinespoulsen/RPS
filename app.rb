@@ -4,6 +4,7 @@ require_relative 'lib/player.rb'
 
 class RockPaperScissor < Sinatra::Base
   get '/' do
+    @game = nil
     erb(:index)
   end
 
@@ -38,6 +39,7 @@ class RockPaperScissor < Sinatra::Base
     @winner = @game.winner?(@game.player, @game.opponent)
     erb(:winner)
   end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
