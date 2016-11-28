@@ -19,16 +19,16 @@ How to use the applicaton
 
 To run the program start a local server by writing ruby app.rb in terminal and the app.rb file from the project directory will be executed.
 
-* Login by adding your name and start the game.
+* Login by playing either a two player game or agains the computer.
+* Only add player 1 to play against the computer.
 * Select either rock, paper or scissors.
 * A status of the game with winner and the slected choices will be shown.
 * Press next round to challenge the opponent again.
-* When a player gets to two wins a page with the winner will be show.
+* When a player gets to two wins a page with the winner will be shown.
 * User can start a new game if he is up for another challenge.
 
 Areas to improve
 -----
 
-* Adding two player solution.
 * Adding more advanced selections to the game.
 * Improving the design features.
