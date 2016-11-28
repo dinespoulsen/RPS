@@ -5,10 +5,17 @@ require_relative 'rps_game.rb'
 class Game
 
   attr_reader :player, :opponent
+  attr_accessor :choice
 
-  def initialize(name = Player::DEFAULT_NAME, player_klass = Player, opponent_klass = Opponent)
+  def initialize(name = Player::DEFAULT_NAME, name_two = '', player_klass = Player, opponent_klass = Opponent)
     @player = player_klass.new(name)
-    @opponent = opponent_klass.new
+    @opponent = player_klass.new(name_two) if !name_two.empty?
+    @opponent = opponent_klass.new if name_two.empty?
+    @choice = nil
+  end
+
+  def save_choice(choice)
+    self.choice = choice
   end
 
   def win_to(winner)
@@ -19,8 +26,8 @@ class Game
     @game
   end
 
-  def self.start_game(name)
-    @game = Game.new(name)
+  def self.start_game(name, name_two = '')
+    @game = Game.new(name, name_two)
   end
 
   def found_winner?(player, opponent)
@@ -44,6 +51,7 @@ class Game
   def opponent_win?(player_choice, opponent_choice)
     rps(player_choice, opponent_choice) == false
   end
+
 
 
   private

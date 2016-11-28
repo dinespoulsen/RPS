@@ -1,4 +1,5 @@
 require 'game'
+require 'player'
 
 describe Game do
   subject(:game) {described_class.new}
@@ -13,6 +14,11 @@ describe Game do
 
     it "should have an opponent" do
       expect(subject.opponent).not_to be_nil
+    end
+
+    it "should be able to add two players" do
+      game2 = Game.new("name", "name2")
+      expect(game2.opponent).to be_kind_of(Player)
     end
   end
 

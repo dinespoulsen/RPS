@@ -8,7 +8,22 @@
         14,
         null
       ],
+      "/Users/dinespoulsen/Projects/RPS/spec/features/two_players_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/dinespoulsen/Projects/RPS/spec/game_spec.rb": [
+        1,
         1,
         null,
         1,
@@ -22,6 +37,11 @@
         1,
         null,
         null,
+        1,
+        1,
+        null,
+        null,
+        1,
         1,
         1,
         null,
@@ -146,6 +166,6 @@
         null
       ]
     },
-    "timestamp": 1480340318
+    "timestamp": 1480345622
   }
 }

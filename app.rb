@@ -9,7 +9,7 @@ class RockPaperScissor < Sinatra::Base
   end
 
   post '/name' do
-    @game = Game.start_game(params[:name])
+    @game = Game.start_game(params[:name], params[:name2])
     redirect to('/play')
   end
 
@@ -18,12 +18,28 @@ class RockPaperScissor < Sinatra::Base
   end
 
   get '/play' do
-
     erb(:play)
   end
 
+  get '/multi-players' do
+    @game.choice.nil? ? @player_choice = params[:choice] : @player_choice = @game.choice
+    @opponent_choice = @game.opponent.play
+      if @game.player_win?(@player_choice, @opponent_choice)
+        @game.win_to(@game.player)
+      elsif @game.opponent_win?(@player_choice, @opponent_choice)
+        @game.win_to(@game.opponent)
+      else
+    end
+    redirect to('/winner') if @game.found_winner?(@game.player, @game.opponent)
+    erb @game.result(@player_choice, @opponent_choice)
+  end
+
   get '/selection' do
-    @player_choice = params[:choice]
+    @game.save_choice(params[:choice]) if @game.opponent.is_a? Player
+    redirect to('/play') if !@game.choice.nil?
+
+
+    @game.choice.nil? ? @player_choice = params[:choice] : @player_choice = @game.choice
     @opponent_choice = @game.opponent.play
       if @game.player_win?(@player_choice, @opponent_choice)
         @game.win_to(@game.player)
