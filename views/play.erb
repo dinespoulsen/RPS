@@ -1,13 +1,17 @@
 <div class="top">
-  <h2>Welcome <%= @game.player.name%> to a game of Rock, Paper & Scissors</h2>
-  <h3>Choose your weapon!</h3>
-  <p>You are playing <%= @game.opponent.name %> and you're playing best out of three. Give it your best every time!</p>
+  <h2>Welcome <%= @game.player.name%> and <%= @game.opponent.name%> to a game of Rock, Paper & Scissors</h2>
+  <p>You are playing best out of three. Give it your best every time!</p>
+  <% if session[:choice].nil? %>
+    <p><%= @game.player.name %> Choose your weapon!</p>
+  <% else %>
+    <p><%= @game.opponent.name %> Choose your weapon!</p>
+  <% end %>
 </div>
 
 <div class="menu">
   <ul>
-    <a href="/selection?choice=Rock"><li class="button">Rock</li></a>
-    <a href="/selection?choice=Paper"><li class="button">Paper</li></a>
-    <a href="/selection?choice=Scissors"><li class="button">Scissors</li></a>
+    <a href="/forward?choice=Rock"><li class="button">Rock</li></a>
+    <a href="/forward?choice=Paper"><li class="button">Paper</li></a>
+    <a href="/forward?choice=Scissors"><li class="button">Scissors</li></a>
   </ul>
 </div>

@@ -2,7 +2,10 @@ require 'sinatra/base'
 require_relative 'lib/game.rb'
 require_relative 'lib/player.rb'
 
+
 class RockPaperScissor < Sinatra::Base
+  enable :sessions
+
   get '/' do
     @game = nil
     erb(:index)
@@ -18,12 +21,25 @@ class RockPaperScissor < Sinatra::Base
   end
 
   get '/play' do
+    session[:choice] = nil if !session[:choice].nil? && !session[:choice2].nil?
+    session[:choice2] = nil if !session[:choice2].nil?
     erb(:play)
   end
 
-  get '/multi-players' do
-    @game.choice.nil? ? @player_choice = params[:choice] : @player_choice = @game.choice
-    @opponent_choice = @game.opponent.play
+  get '/forward' do
+    if session[:choice].nil?
+      session[:choice] = params[:choice]
+    else
+      session[:choice2] = params[:choice]
+    end
+    redirect to('/selection') if @game.opponent.is_a? Opponent
+    redirect to('/play') if session[:choice2].nil?
+    redirect to('/multiplayers')
+  end
+
+  get '/multiplayers' do
+    @player_choice = session[:choice]
+    @opponent_choice = session[:choice2]
       if @game.player_win?(@player_choice, @opponent_choice)
         @game.win_to(@game.player)
       elsif @game.opponent_win?(@player_choice, @opponent_choice)
@@ -35,11 +51,7 @@ class RockPaperScissor < Sinatra::Base
   end
 
   get '/selection' do
-    @game.save_choice(params[:choice]) if @game.opponent.is_a? Player
-    redirect to('/play') if !@game.choice.nil?
-
-
-    @game.choice.nil? ? @player_choice = params[:choice] : @player_choice = @game.choice
+    @player_choice = session[:choice]
     @opponent_choice = @game.opponent.play
       if @game.player_win?(@player_choice, @opponent_choice)
         @game.win_to(@game.player)

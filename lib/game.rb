@@ -11,7 +11,6 @@ class Game
     @player = player_klass.new(name)
     @opponent = player_klass.new(name_two) if !name_two.empty?
     @opponent = opponent_klass.new if name_two.empty?
-    @choice = nil
   end
 
   def save_choice(choice)
