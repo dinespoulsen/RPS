@@ -17,7 +17,7 @@ Installation
 How to use the applicaton
 -----
 
-To run the program start a local server by writing rackup in the terminal and the app.rb file from the project directory will be executed.
+To run the program start a local server by writing ruby app.rb in terminal and the app.rb file from the project directory will be executed.
 
 * Login by adding your name and start the game.
 * Select either rock, paper or scissors.

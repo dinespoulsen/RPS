@@ -12,21 +12,19 @@
         <div class="logo">
           <h1>ROCK | PAPER => Scissors</h1>
         </div>
-
-        <% if !@game.nil? %>
-        <div class="scoreboard">
-          <ul >
-            <li><%= @game.player.wins %> -</li>
-            <li><%= @game.opponent.wins %></li>
-          </ul>
-        </div>
-        <% end %>
-      </header
-    </div>
+          <% if !@game.nil? %>
+          <div class="scoreboard">
+            <ul>
+              <li><%= @game.player.wins %> </li>
+              <li>- <%= @game.opponent.wins %></li>
+            </ul>
+          </div>
+          <% end %>
+      </header>
         <%= yield %>
-        <footer>
-          <p>Poulsen Gaming</p>
-        </footer>
+      <footer>
+        <p>Poulsen Gaming</p>
+      </footer>
     </div>
   </body>
 </html>
