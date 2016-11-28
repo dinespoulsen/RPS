@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/github/dinespoulsen/RPS/badge.svg?branch=master)](https://coveralls.io/github/dinespoulsen/RPS?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/dinespoulsen/RPS/badge.svg?branch=master)](https://coveralls.io/github/dinespoulsen/RPS?branch=master)
 
 Rock Paper Scissors application
 ==================
