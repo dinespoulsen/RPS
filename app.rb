@@ -25,15 +25,13 @@ class RockPaperScissor < Sinatra::Base
     @player_choice = params[:choice]
     @opponent_choice = @game.opponent.play
       if @game.player_win?(@player_choice, @opponent_choice)
-        @winner = @game.player
-        @game.win_to(@winner)
+        @game.win_to(@game.player)
       elsif @game.opponent_win?(@player_choice, @opponent_choice)
-        @winner = @game.opponent
-        @game.win_to(@winner)
+        @game.win_to(@game.opponent)
       else
     end
     redirect to('/winner') if @game.found_winner?(@game.player, @game.opponent)
-    erb(:selection)
+    erb @game.result(@player_choice, @opponent_choice)
   end
 
   get '/winner' do

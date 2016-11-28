@@ -32,6 +32,11 @@ class Game
     opponent
   end
 
+  def result(player_choice, opponent_choice)
+    return :draw if draw?(player_choice, opponent_choice)
+    player_win?(player_choice, opponent_choice) ? :win : :loss
+  end
+
   def player_win?(player_choice, opponent_choice)
     rps(player_choice, opponent_choice) == true
   end
@@ -40,11 +45,12 @@ class Game
     rps(player_choice, opponent_choice) == false
   end
 
+
+  private
+
   def draw?(player_choice, opponent_choice)
     rps(player_choice, opponent_choice) == nil
   end
-
-  private
 
   def rps(player_choice, opponent_choice, rps_game_klass = RpsGame)
     rps_game_klass.new.play(player_choice, opponent_choice)
