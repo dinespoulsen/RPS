@@ -21,6 +21,7 @@ class RockPaperScissor < Sinatra::Base
   end
 
   get '/play' do
+    session[:choice] = nil if @game.opponent.is_a? Opponent
     session[:choice] = nil if !session[:choice].nil? && !session[:choice2].nil?
     session[:choice2] = nil if !session[:choice2].nil?
     erb(:play)
