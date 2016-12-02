@@ -7,6 +7,8 @@ class RockPaperScissor < Sinatra::Base
   enable :sessions
 
   get '/' do
+    session[:choice] = nil
+    session[:choice2] = nil
     @game = nil
     erb(:index)
   end
