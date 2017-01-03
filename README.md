@@ -29,6 +29,33 @@ To run the program start a local server by writing ruby app.rb in terminal and t
 * When a player gets to two wins a page with the winner will be shown.
 * User can start a new game if he is up for another challenge.
 
+Example
+-----
+
+Starting up the game.
+
+![alt tag](./startGame.png)
+
+Selecting you weapen.
+![alt tag](./selectChoice.png)
+
+Status of over selections.
+
+![alt tag](./status.png)
+
+Game is over and winner is found.
+
+![alt tag](./whowins.png)
+
+
+Technologies used
+-----
+* Html
+* Ruby
+* css
+* Sinatra
+* Rspec
+
 Areas to improve
 -----
 
